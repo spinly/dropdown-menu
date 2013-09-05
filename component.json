@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-    "spinly/vars": "*"
+    "spinly/vars": "*",
+    "component/jquery": "*"
   },
   "development": {},
   "license": "MIT",

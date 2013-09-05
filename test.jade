@@ -10,5 +10,25 @@ html
 
   h1 dropdown-menu
 
+  mixin drop(index)
+    li.dropdown
+      a.dropdown-toggle(id="drop#{index}", href="#", role="button", data-toggle="dropdown") rargo
+      ul.dropdown-menu(role="menu", aria-labelledby="drop#{index}")
+        mixin li(tabindex, text)
+          li(role="presentation"): a(role="menu-item", href="#", data-target=".dropdown", tabindex= tabindex)= text
+
+        +li(1, "First")
+        +li(2, "Second")
+        +li(3, "Third")
+        +li(4, "Fourth")
+
+  ul.nav.nav-pills
+    +drop(1)
+    +drop(2)
+    +drop(3)
+
   :coffeescript
-    console.log 'Testing dropdown-menu'
+    window.$ = require("jquery")
+    require("dropdown-menu")
+
+    # $('.dropdown').dropdown()
