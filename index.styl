@@ -32,7 +32,7 @@
 }
 
 // The dropdown menu (ul)
-.dropdown-menu {
+.dropdown-menu
   position: absolute;
   top: 100%;
   left: 0;
@@ -52,27 +52,30 @@
   background-clip: padding-box;
 
   // Aligns the dropdown menu to right
-  &.pull-right {
+  &.pull-right
     right: 0;
     left: auto;
-  }
 
   // Dividers (basically an hr) within the dropdown
-  .divider {
+  .divider
     nav-divider($dropdown-divider-bg);
-  }
 
   // Links within the dropdown menu
-  > li > a {
-    display: block;
-    padding: 3px 20px;
-    clear: both;
-    font-weight: normal;
-    line-height: $line-height-base;
-    color: $dropdown-link-color;
-    white-space: nowrap; // prevent links from randomly breaking onto new lines
-  }
-}
+  > li
+    border-bottom 1px solid $gray-lighter
+    &:last-child
+      border-width 0
+    > a
+      display: block;
+      padding: 7px 20px;
+      clear: both;
+      font-weight: normal;
+      line-height: $line-height-base;
+      color: $dropdown-link-color;
+      white-space: nowrap; // prevent links from randomly breaking onto new lines
+      span
+        &.pad-left
+          padding-left 20px
 
 // Hover/Focus state
 .dropdown-menu > li > a {
